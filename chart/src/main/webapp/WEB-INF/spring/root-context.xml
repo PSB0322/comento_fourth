@@ -34,5 +34,5 @@
 	</bean>
 	
 	<mybatis-spring:scan base-package="org.subum.mapper"></mybatis-spring:scan>
-
+	<context:component-scan base-package="org.subum.service" />
 </beans>

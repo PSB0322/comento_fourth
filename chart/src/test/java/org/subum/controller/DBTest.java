@@ -8,9 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.subum.mapper.DataMapper;
 import org.subum.mapper.TimeMapper;
-
-import com.mysql.cj.log.Log;
 
 import lombok.extern.log4j.Log4j;
 
@@ -33,14 +32,17 @@ public class DBTest {
 
 		Connection con = DriverManager.getConnection(url, "root", "12345678");
 
-		System.out.println(con);
-
+	
+		log.info(con);
 		con.close();
 
 	}
 
 	@Autowired
 	TimeMapper timeMapper;
+	
+	@Autowired
+	DataMapper dataMapper;
 	
 	@Test
 	public void testNow() {
@@ -49,5 +51,13 @@ public class DBTest {
 		System.out.println(timeMapper.getTime());
 		
 	}
+	
+	@Test
+	public void testData() {
+		
+		log.info(dataMapper.getData());
+	}
+	
+	
 
 }
