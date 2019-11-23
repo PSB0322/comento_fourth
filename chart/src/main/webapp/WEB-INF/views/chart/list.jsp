@@ -73,7 +73,7 @@ th {
 	</div>
 
 	<script type="text/javascript">
-		
+	
 	Highcharts
 	.chart(
 			'container',
